@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+ <h1>Welcome to the Project Planner</h1>
+    <p>
+        A demo application for Project
+        <em>Air Quality Prediction. </em>
+    </p>
+
+    <h2>Tasks Assigned</h2>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <a href="{% url 'detail' task.id %}">
+                    {{task.title}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul> <br>
+<div class="button" >
+<a href="{% url 'students' %}"><b>Participants list<b></b></a><br><br>
+<a href="{% url "new" %}"><b>Add New Tasks</b></a><br><br>
+<a href="about.html">About</a>
+</div>
+
+
+{% endblock %}

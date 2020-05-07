@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{%block title %}Task: {{task.title}}{% endblock %}}
+
+{% block content %}
+<h1>{{task.title}}</h1>
+<p>
+    This Task has been been assigned to
+    <strong>{{task.student}}</strong>.
+</p>
+<div class="home">
+<a href="{% url 'welcome' %}">Home</a>
+</div>
+{% endblock %}
